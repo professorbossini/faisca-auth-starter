@@ -15,7 +15,12 @@ export interface FirebaseConfig {
 }
 
 export interface AppEnv {
-  appName: string;
+  /** Your app's name, or `null` to show the brand placeholder. */
+  appName: string | null;
+  /** Logo link (absolute URL or path under /public). Overrides src/brand/logo.*. */
+  appLogoUrl: string | null;
+  /** Shows the "feito com Faísca" badge in the bottom corner. */
+  showPoweredBy: boolean;
   authProvider: AuthProviderId;
   enableEmailPassword: boolean;
   /** Base URL of your API without trailing slash, or `null` to use demo data. */
@@ -56,7 +61,9 @@ function parseProvider(value: string): AuthProviderId {
 }
 
 export const env: AppEnv = {
-  appName: read('VITE_APP_NAME') || 'Faísca',
+  appName: read('VITE_APP_NAME') || null,
+  appLogoUrl: read('VITE_APP_LOGO_URL') || null,
+  showPoweredBy: readBool('VITE_SHOW_POWERED_BY', true),
   authProvider: parseProvider(read('VITE_AUTH_PROVIDER')),
   enableEmailPassword: readBool('VITE_ENABLE_EMAIL_PASSWORD', true),
   apiUrl: read('VITE_API_URL').replace(/\/+$/, '') || null,

@@ -7,10 +7,20 @@ import { ThemeProvider } from '@mui/material/styles';
 import { App } from './App';
 import { createAuthAdapter } from './auth';
 import { ConfigErrorScreen } from './components/ConfigErrorScreen';
+import { brand } from './config/brand';
 import { assertValidEnv, ConfigError } from './config/env';
 import { theme } from './theme';
 
 const root = createRoot(document.getElementById('root')!);
+
+// Your logo (src/brand/ or VITE_APP_LOGO_URL) also becomes the favicon.
+if (brand.logoUrl) {
+  const icon = document.querySelector<HTMLLinkElement>('link[rel="icon"]');
+  if (icon) {
+    icon.removeAttribute('type');
+    icon.href = brand.logoUrl;
+  }
+}
 
 async function bootstrap() {
   try {

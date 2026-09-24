@@ -1,5 +1,5 @@
 import { Box, Fade } from '@mui/material';
-import { FaiscaMark } from './brand/FaiscaMark';
+import { BrandPulse } from './brand/BrandMark';
 
 /** Shown while the auth adapter restores the session. */
 export function SplashScreen() {
@@ -10,7 +10,7 @@ export function SplashScreen() {
         aria-label="Carregando"
         sx={{ minHeight: '100dvh', display: 'grid', placeItems: 'center' }}
       >
-        <FaiscaMark size={64} animated />
+        <BrandPulse size={64} />
       </Box>
     </Fade>
   );

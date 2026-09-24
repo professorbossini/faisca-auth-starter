@@ -1,6 +1,9 @@
-import { Stack, Typography } from '@mui/material';
-import { env } from '@/config/env';
-import { FaiscaMark } from './FaiscaMark';
+import { useState } from 'react';
+import { ButtonBase, Stack, Tooltip, Typography } from '@mui/material';
+import { brand } from '@/config/brand';
+import { BrandMark } from './BrandMark';
+import { NamePlaceholder } from './BrandPlaceholder';
+import { BrandSetupDialog } from './BrandSetupDialog';
 
 interface BrandLogoProps {
   size?: 'small' | 'medium' | 'large';
@@ -12,22 +15,58 @@ const sizes = {
   large: { mark: 48, font: '1.625rem' },
 } as const;
 
+/**
+ * Your app's logo + name. While either is missing, renders transparent
+ * placeholders that open a short "how to customize" guide when clicked.
+ */
 export function BrandLogo({ size = 'medium' }: BrandLogoProps) {
+  const [helpOpen, setHelpOpen] = useState(false);
   const s = sizes[size];
-  return (
+
+  const content = (
     <Stack direction="row" spacing={1.5} sx={{ alignItems: 'center' }}>
-      <FaiscaMark size={s.mark} />
-      <Typography
-        component="span"
-        sx={{
-          fontSize: s.font,
-          fontWeight: 600,
-          letterSpacing: '-0.01em',
-          fontVariationSettings: "'ROND' 100",
-        }}
-      >
-        {env.appName}
-      </Typography>
+      <BrandMark size={s.mark} />
+      {brand.name ? (
+        <Typography
+          component="span"
+          sx={{
+            fontSize: s.font,
+            fontWeight: 600,
+            letterSpacing: '-0.01em',
+            fontVariationSettings: "'ROND' 100",
+          }}
+        >
+          {brand.name}
+        </Typography>
+      ) : (
+        <NamePlaceholder fontSize={`calc(${s.font} * 0.8)`} />
+      )}
     </Stack>
+  );
+
+  if (!brand.needsSetup) return content;
+
+  return (
+    <>
+      <Tooltip title="Personalize sua marca">
+        <ButtonBase
+          onClick={() => setHelpOpen(true)}
+          aria-label="Personalize sua marca"
+          sx={(theme) => ({
+            borderRadius: 3,
+            p: 0.5,
+            m: -0.5,
+            '&:hover .brand-placeholder, &.Mui-focusVisible .brand-placeholder': {
+              borderColor: theme.vars.palette.primary.main,
+              color: theme.vars.palette.primary.main,
+              bgcolor: theme.alpha(theme.vars.palette.primary.main, 0.06),
+            },
+          })}
+        >
+          {content}
+        </ButtonBase>
+      </Tooltip>
+      <BrandSetupDialog open={helpOpen} onClose={() => setHelpOpen(false)} />
+    </>
   );
 }

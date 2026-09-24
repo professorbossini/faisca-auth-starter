@@ -1,10 +1,20 @@
 /// <reference types="vitest/config" />
 import { fileURLToPath, URL } from 'node:url';
 import react from '@vitejs/plugin-react';
-import { defineConfig } from 'vite';
+import { defineConfig, loadEnv, type Plugin } from 'vite';
 
-export default defineConfig({
-  plugins: [react()],
+/** Fills <title> with VITE_APP_NAME, falling back to a neutral placeholder. */
+function appTitle(mode: string): Plugin {
+  const name = loadEnv(mode, process.cwd()).VITE_APP_NAME?.trim() || 'Novo app';
+  const escaped = name.replace(/[&<>"]/g, (c) => `&#${c.charCodeAt(0)};`);
+  return {
+    name: 'app-title',
+    transformIndexHtml: (html) => html.replace('%APP_TITLE%', escaped),
+  };
+}
+
+export default defineConfig(({ mode }) => ({
+  plugins: [react(), appTitle(mode)],
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url)),
@@ -48,6 +58,8 @@ export default defineConfig({
     css: false,
     env: {
       VITE_AUTH_PROVIDER: 'mock',
+      VITE_APP_NAME: '',
+      VITE_APP_LOGO_URL: '',
     },
   },
-});
+}));
