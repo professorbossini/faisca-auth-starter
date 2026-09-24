@@ -40,6 +40,7 @@ Trocar de modo é mudar **uma variável de ambiente**. Nenhuma tela muda.
 - 🎨 **Tema Material 3** no MUI: Google Sans Flex, paleta lima + violeta, modo claro/escuro sem piscar
 - ✨ **Feedback e movimento M3**: state layers, molas no clique, foco visível, transições entre páginas e respeito a `prefers-reduced-motion`
 - 📱 **Responsivo**: abas no desktop, barra de navegação inferior no celular
+- 🏷️ **Sua marca em 1 passo**: solte `logo.svg` em `src/brand/` (ou use um link) e ele aparece no app e no favicon; até lá, um placeholder mostra onde
 - 🧩 **Kit de componentes** em `/components` como referência viva
 - 🧪 **Testes** (Vitest + Testing Library), **ESLint**, **Prettier**, **CI** e **Dependabot**
 - 🖥️ **Backend de referência** em Express implementando o contrato completo
@@ -130,6 +131,8 @@ Todas as variáveis ficam no `.env` (copie de [`.env.example`](.env.example)). E
 | Variável                     | Modo     | Descrição                                     |
 | ---------------------------- | -------- | --------------------------------------------- |
 | `VITE_APP_NAME`              | todos    | Nome exibido no app e na aba do navegador     |
+| `VITE_APP_LOGO_URL`          | todos    | Link do logo (prioridade sobre `src/brand/`)  |
+| `VITE_SHOW_POWERED_BY`       | todos    | `false` esconde o selo "feito com Faísca"     |
 | `VITE_AUTH_PROVIDER`         | todos    | `mock`, `firebase` ou `backend`               |
 | `VITE_ENABLE_EMAIL_PASSWORD` | todos    | `false` para deixar só o botão do Google      |
 | `VITE_API_URL`               | todos    | URL da sua API. Vazio = dados de demonstração |
@@ -206,6 +209,20 @@ Decisões que tornam o template robusto:
 - **Code splitting.** O SDK do Firebase só é baixado quando o modo `firebase` está ativo.
 - **Falha amigável.** Configuração errada vira uma tela explicativa, não uma página em branco.
 
+## Sua marca
+
+Um app recém-criado mostra **placeholders transparentes** no lugar do logo e do nome, e clicar neles abre um guia rápido. Para trocar:
+
+| O quê                | Como                                                                                                                                         |
+| -------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Logo por arquivo** | Salve como `src/brand/logo.svg` (ou `.png`, `.webp`, `.avif`, `.jpg`). É detectado automaticamente, com hot reload, e também vira o favicon. |
+| **Logo por link**    | `VITE_APP_LOGO_URL=https://seu-site.com/logo.svg` no `.env` (tem prioridade sobre a pasta).                                                  |
+| **Nome**             | `VITE_APP_NAME=Meu App` no `.env`. Também preenche o título da aba.                                                                          |
+
+<p align="center"><img src="docs/images/brand-setup.png" alt="Guia Personalize sua marca, aberto ao clicar no placeholder" width="560" /></p>
+
+No canto inferior da tela fica o selo **"feito com Faísca"**, um lembrete de onde o app nasceu (e um link para este repositório). Se preferir, desligue com `VITE_SHOW_POWERED_BY=false`.
+
 ## Tema e design
 
 Tema MUI com **Material Design 3** e a tipografia dos materiais de IA do Google (**Google Sans Flex** com terminais arredondados e **Google Sans Code**), servida localmente via Fontsource. Paleta lima `#C6EF34` + violeta `#5B2DB0`, modo claro/escuro e tokens de movimento do M3.
@@ -226,8 +243,8 @@ Para trocar cores, fonte, ícone e nome, veja **[docs/tema.md](docs/tema.md)**.
 
 ## Checklist do app novo
 
-- [ ] `VITE_APP_NAME` e `name` no `package.json`
-- [ ] Ícone: `src/components/brand/FaiscaMark.tsx` e `public/favicon.svg`
+- [ ] Logo em `src/brand/logo.svg` (ou `VITE_APP_LOGO_URL`) e `VITE_APP_NAME` no `.env`
+- [ ] `name` no `package.json`
 - [ ] Cores em `src/theme/tokens.ts` (se quiser outra identidade)
 - [ ] Modo de autenticação e credenciais **próprias do projeto** no `.env`
 - [ ] Origens autorizadas no Google Cloud / Firebase (localhost + produção)

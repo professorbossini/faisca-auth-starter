@@ -10,7 +10,9 @@ O visual é um tema do [MUI](https://mui.com/material-ui/) inspirado no **Materi
 | [`src/theme/theme.ts`](../src/theme/theme.ts)                                                                                   | Esquemas claro/escuro, tipografia e overrides de todos os componentes                  |
 | [`src/theme/motion.ts`](../src/theme/motion.ts)                                                                                 | Tokens de easing e duração do M3, helper `transition()` e opacidades de _state layer_  |
 | [`src/theme/augment.d.ts`](../src/theme/augment.d.ts)                                                                           | Tipos das extensões: cor `lime`, `container`/`onContainer`, variantes `tonal` e `soft` |
-| [`src/components/brand/FaiscaMark.tsx`](../src/components/brand/FaiscaMark.tsx) + [`public/favicon.svg`](../public/favicon.svg) | Ícone da marca                                                                         |
+| [`src/brand/`](../src/brand/README.md)                                                                                          | **Seu logo** (`logo.svg`, `.png`...), detectado automaticamente                        |
+| [`src/config/brand.ts`](../src/config/brand.ts)                                                                                 | Resolve logo e nome: `VITE_APP_LOGO_URL` → `src/brand/logo.*` → placeholder            |
+| [`src/components/brand/FaiscaMark.tsx`](../src/components/brand/FaiscaMark.tsx) + [`public/favicon.svg`](../public/favicon.svg) | Marca do template Faísca (selo "feito com Faísca" e favicon padrão)                    |
 
 A página **/components** do app mostra todos os componentes estilizados: use como referência viva ao montar telas novas.
 
@@ -48,10 +50,11 @@ sx={{ transition: transition(['transform', 'opacity'], 'medium2', 'emphasizedDec
 
 ## Trocando a marca
 
-1. Nome: `VITE_APP_NAME` no `.env`.
-2. Cores: edite `lime` e `violet` em `tokens.ts` (mantenha a escala 50–900 para que containers e estados continuem harmônicos).
-3. Ícone: substitua `FaiscaMark.tsx` e `public/favicon.svg`.
-4. Fonte: troque o import em `src/main.tsx` e `fontFamily` em `theme.ts`.
+1. **Logo:** salve em `src/brand/logo.svg` (ou `.png`, `.webp`, `.avif`, `.jpg`), ou aponte `VITE_APP_LOGO_URL` para um link. Ele aparece no cabeçalho, no login, no carregamento, no 404 e como favicon. Enquanto não houver logo, um placeholder tracejado mostra onde ele vai ficar.
+2. **Nome:** `VITE_APP_NAME` no `.env` (também vira o título da aba).
+3. **Cores:** edite `lime` e `violet` em `tokens.ts` (mantenha a escala 50–900 para que containers e estados continuem harmônicos).
+4. **Fonte:** troque o import em `src/main.tsx` e `fontFamily` em `theme.ts`.
+5. **Selo "feito com Faísca":** fica no canto inferior e linka para o template. Para esconder, `VITE_SHOW_POWERED_BY=false`.
 
 ## Botão do Google
 
