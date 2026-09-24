@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none">
+  <defs>
+    <linearGradient id="tile" x1="6" y1="4" x2="42" y2="46" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#DDFB6A"/>
+      <stop offset="1" stop-color="#B4E21C"/>
+    </linearGradient>
+    <mask id="gap" maskUnits="userSpaceOnUse" x="0" y="0" width="48" height="48">
+      <rect width="48" height="48" fill="#fff"/>
+      <circle cx="37.02" cy="13.07" r="6.8" fill="#000"/>
+      <rect x="17.5" y="17.5" width="13" height="13" rx="4.2" transform="rotate(45 24 24)" fill="#000"/>
+    </mask>
+  </defs>
+  <rect width="48" height="48" rx="13" fill="url(#tile)"/>
+  <ellipse cx="24" cy="24" rx="17" ry="7.5" transform="rotate(-40 24 24)" stroke="#2A1263" stroke-width="2.6" mask="url(#gap)"/>
+  <rect x="19" y="19" width="10" height="10" rx="3" transform="rotate(45 24 24)" fill="#2A1263"/>
+  <circle cx="37.02" cy="13.07" r="3.3" fill="#2A1263"/>
+</svg>
