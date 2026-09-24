@@ -20,7 +20,7 @@ const focusRing = (theme: Theme) => ({
 });
 
 export const theme = createTheme({
-  cssVariables: { colorSchemeSelector: 'data', cssVarPrefix: 'orbita' },
+  cssVariables: { colorSchemeSelector: 'data', cssVarPrefix: 'faisca' },
   colorSchemes: {
     light: {
       palette: {

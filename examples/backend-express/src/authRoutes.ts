@@ -10,7 +10,7 @@ import {
 } from './tokens.ts';
 import { hashPassword, toPublicUser, users, verifyPassword, type UserRecord } from './users.ts';
 
-const REFRESH_COOKIE = 'orbita_rt';
+const REFRESH_COOKIE = 'faisca_rt';
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 // 'postmessage' is the redirect URI used by the GIS popup code flow.

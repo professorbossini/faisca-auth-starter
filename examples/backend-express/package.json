@@ -1,8 +1,8 @@
 {
-  "name": "orbita-backend-express",
+  "name": "faisca-backend-express",
   "private": true,
   "version": "1.0.0",
-  "description": "Reference API implementing the Órbita auth contract (Google code exchange, JWT sessions, refresh cookies).",
+  "description": "Reference API implementing the Faísca auth contract (Google code exchange, JWT sessions, refresh cookies).",
   "type": "module",
   "engines": {
     "node": ">=20.19"

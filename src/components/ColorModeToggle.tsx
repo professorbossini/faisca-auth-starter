@@ -21,8 +21,8 @@ export function ColorModeToggle() {
         <Icon
           key={mode}
           sx={{
-            animation: `orbita-spin-in ${duration.medium4}ms ${easing.springFast}`,
-            '@keyframes orbita-spin-in': {
+            animation: `faisca-spin-in ${duration.medium4}ms ${easing.springFast}`,
+            '@keyframes faisca-spin-in': {
               from: { transform: 'rotate(-90deg) scale(0.6)', opacity: 0 },
               to: { transform: 'none', opacity: 1 },
             },

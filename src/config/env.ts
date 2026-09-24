@@ -56,7 +56,7 @@ function parseProvider(value: string): AuthProviderId {
 }
 
 export const env: AppEnv = {
-  appName: read('VITE_APP_NAME') || 'Órbita',
+  appName: read('VITE_APP_NAME') || 'Faísca',
   authProvider: parseProvider(read('VITE_AUTH_PROVIDER')),
   enableEmailPassword: readBool('VITE_ENABLE_EMAIL_PASSWORD', true),
   apiUrl: read('VITE_API_URL').replace(/\/+$/, '') || null,

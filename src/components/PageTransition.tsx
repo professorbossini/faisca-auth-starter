@@ -13,8 +13,8 @@ export function PageTransition({ children }: { children: ReactNode }) {
     <Box
       key={pathname}
       sx={{
-        animation: `orbita-page-enter ${duration.long1}ms ${easing.emphasizedDecelerate} both`,
-        '@keyframes orbita-page-enter': {
+        animation: `faisca-page-enter ${duration.long1}ms ${easing.emphasizedDecelerate} both`,
+        '@keyframes faisca-page-enter': {
           from: { opacity: 0, transform: 'translateY(12px) scale(0.995)' },
           to: { opacity: 1, transform: 'none' },
         },

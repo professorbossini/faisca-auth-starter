@@ -1,19 +1,19 @@
 <div align="center">
 
-<img src="docs/images/hero.png" alt="Órbita Auth Starter: login com Google pronto para qualquer backend" width="100%" />
+<img src="docs/images/hero.png" alt="Faísca Auth Starter: login com Google pronto para qualquer backend" width="100%" />
 
-# Órbita Auth Starter
+# Faísca Auth Starter
 
 **O ponto de partida para o seu próximo app React: login com Google, tema Material 3 e uma camada de autenticação que se encaixa em qualquer backend.**
 
-[![CI](https://github.com/professorbossini/orbita-auth-starter/actions/workflows/ci.yml/badge.svg)](https://github.com/professorbossini/orbita-auth-starter/actions/workflows/ci.yml)
-[![Template](https://img.shields.io/badge/GitHub-template-5B2DB0?logo=github)](https://github.com/professorbossini/orbita-auth-starter/generate)
+[![CI](https://github.com/professorbossini/faisca-auth-starter/actions/workflows/ci.yml/badge.svg)](https://github.com/professorbossini/faisca-auth-starter/actions/workflows/ci.yml)
+[![Template](https://img.shields.io/badge/GitHub-template-5B2DB0?logo=github)](https://github.com/professorbossini/faisca-auth-starter/generate)
 [![License: MIT](https://img.shields.io/badge/licen%C3%A7a-MIT-C6EF34)](LICENSE)
 ![React 19](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=white)
 ![MUI](https://img.shields.io/badge/MUI-Material%203-007FFF?logo=mui&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/TypeScript-strict-3178C6?logo=typescript&logoColor=white)
 
-[**Usar este template →**](https://github.com/professorbossini/orbita-auth-starter/generate)
+[**Usar este template →**](https://github.com/professorbossini/faisca-auth-starter/generate)
 
 </div>
 
@@ -23,7 +23,7 @@
 
 Todo app novo começa com a mesma lista: tela de login, "Entrar com Google", rota protegida, logout, tema claro/escuro, um cliente HTTP que manda o token... e cada vez isso é refeito do zero, de um jeito diferente.
 
-O **Órbita** resolve essa parte uma vez, bem feita, para você **clonar e começar pelo que importa**. E ele não te prende a nenhum backend:
+O **Faísca** acende essa parte uma vez, bem feita, para você **clonar e começar pelo que importa**. E não te prende a nenhum backend:
 
 - **Só front?** Rode no modo `firebase`: o Firebase cuida da sessão e você não escreve servidor.
 - **Tem API própria?** Rode no modo `backend`: o template conversa com qualquer stack (Spring, .NET, Django, Laravel, Node, Go...) por um [contrato HTTP simples](docs/backend-contract.md).
@@ -35,7 +35,7 @@ Trocar de modo é mudar **uma variável de ambiente**. Nenhuma tela muda.
 
 - 🔐 **Login com Google** + e-mail/senha, cadastro e recuperação de senha
 - 🔌 **Adapters plugáveis**: `mock`, `firebase` e `backend` prontos; crie o seu (Supabase, Auth0, Keycloak...) com [um arquivo](docs/novo-adapter.md)
-- 🛰️ **Cliente HTTP** que anexa o token, renova e repete a chamada sozinho quando recebe 401
+- 📡 **Cliente HTTP** que anexa o token, renova e repete a chamada sozinho quando recebe 401
 - 🛡️ **Rotas protegidas** com retorno à página original depois do login
 - 🎨 **Tema Material 3** no MUI: Google Sans Flex, paleta lima + violeta, modo claro/escuro sem piscar
 - ✨ **Feedback e movimento M3**: state layers, molas no clique, foco visível, transições entre páginas e respeito a `prefers-reduced-motion`
@@ -80,14 +80,14 @@ Abra http://localhost:5173 e clique em **Entrar com Google**. No modo `mock` (pa
 
 É o jeito certo de **começar um projeto novo**: o repositório nasce limpo, com um histórico só seu e sem vínculo com este.
 
-1. Clique em [**Use this template → Create a new repository**](https://github.com/professorbossini/orbita-auth-starter/generate).
+1. Clique em [**Use this template → Create a new repository**](https://github.com/professorbossini/faisca-auth-starter/generate).
 2. Escolha o dono, o nome (ex.: `meu-app`) e a visibilidade.
 3. Clone o repositório novo e siga o [Começando em 1 minuto](#começando-em-1-minuto).
 
 Ou pelo terminal, com o [GitHub CLI](https://cli.github.com/):
 
 ```bash
-gh repo create meu-app --template professorbossini/orbita-auth-starter --public --clone
+gh repo create meu-app --template professorbossini/faisca-auth-starter --public --clone
 cd meu-app && npm install && cp .env.example .env && npm run dev
 ```
 
@@ -96,18 +96,18 @@ cd meu-app && npm install && cp .env.example .env && npm run dev
 Faça fork quando você quer **contribuir com o template** ou **acompanhar as atualizações dele** de perto.
 
 1. Clique em **Fork** no topo desta página.
-2. Clone o seu fork: `git clone https://github.com/<seu-usuario>/orbita-auth-starter.git`
+2. Clone o seu fork: `git clone https://github.com/<seu-usuario>/faisca-auth-starter.git`
 3. Para trazer novidades do original depois:
 
    ```bash
-   git remote add upstream https://github.com/professorbossini/orbita-auth-starter.git
+   git remote add upstream https://github.com/professorbossini/faisca-auth-starter.git
    git fetch upstream
    git merge upstream/main
    ```
 
 > **Template ou fork?** Template para criar um produto novo; fork para evoluir o próprio template. Na dúvida, template.
 
-Se você usou o template e quer puxar uma melhoria específica depois, dá para buscar o commit direto: `git remote add orbita https://github.com/professorbossini/orbita-auth-starter.git && git fetch orbita && git cherry-pick <commit>`.
+Se você usou o template e quer puxar uma melhoria específica depois, dá para buscar o commit direto: `git remote add faisca https://github.com/professorbossini/faisca-auth-starter.git && git fetch faisca && git cherry-pick <commit>`.
 
 ## Escolha o modo de autenticação
 
@@ -175,7 +175,7 @@ src/
 │   ├── guards.tsx        #    <RequireAuth> e <RedirectIfAuthenticated>
 │   ├── errors.ts         #    erros normalizados + mensagens em pt-BR
 │   └── adapters/         #    mock · firebase · backend (carregados sob demanda)
-├── api/                  # 🛰️ cliente HTTP (token, 401 → refresh → retry, timeout)
+├── api/                  # 📡 cliente HTTP (token, 401 → refresh → retry, timeout)
 ├── config/env.ts         # ⚙️ variáveis de ambiente tipadas e validadas
 ├── theme/                # 🎨 tokens, tema MUI (M3), movimento
 ├── components/           # 🧩 marca, campos, feedback, splash...
@@ -227,7 +227,7 @@ Para trocar cores, fonte, ícone e nome, veja **[docs/tema.md](docs/tema.md)**.
 ## Checklist do app novo
 
 - [ ] `VITE_APP_NAME` e `name` no `package.json`
-- [ ] Ícone: `src/components/brand/OrbitaMark.tsx` e `public/favicon.svg`
+- [ ] Ícone: `src/components/brand/FaiscaMark.tsx` e `public/favicon.svg`
 - [ ] Cores em `src/theme/tokens.ts` (se quiser outra identidade)
 - [ ] Modo de autenticação e credenciais **próprias do projeto** no `.env`
 - [ ] Origens autorizadas no Google Cloud / Firebase (localhost + produção)

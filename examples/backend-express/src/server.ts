@@ -23,7 +23,7 @@ app.use((err: unknown, _req: Request, res: Response, _next: NextFunction) => {
 });
 
 app.listen(config.port, () => {
-  console.log(`✔ Órbita API on http://localhost:${config.port}/api`);
+  console.log(`✔ Faísca API on http://localhost:${config.port}/api`);
   console.log(`  CORS origins: ${config.frontendOrigins.join(', ')}`);
   if (config.firebaseProjectId)
     console.log(`  Accepting Firebase ID tokens for ${config.firebaseProjectId}`);

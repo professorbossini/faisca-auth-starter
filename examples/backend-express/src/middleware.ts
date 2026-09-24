@@ -5,7 +5,7 @@ import { verifyAccessToken, verifyFirebaseIdToken } from './tokens.ts';
 export interface AuthInfo {
   userId: string;
   email?: string;
-  provider: 'orbita' | 'firebase';
+  provider: 'faisca' | 'firebase';
 }
 
 declare module 'express-serve-static-core' {
@@ -28,7 +28,7 @@ export async function requireAuth(req: Request, res: Response, next: NextFunctio
   }
 
   try {
-    req.auth = { ...(await verifyAccessToken(token)), provider: 'orbita' };
+    req.auth = { ...(await verifyAccessToken(token)), provider: 'faisca' };
     return next();
   } catch {
     // Not one of ours; maybe a Firebase token.

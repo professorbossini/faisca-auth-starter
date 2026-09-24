@@ -1,7 +1,7 @@
 import { AuthError } from '../errors';
 import type { AuthAdapter, AuthStateListener, AuthUser, SignUpInput } from '../types';
 
-const STORAGE_KEY = 'orbita.mock-session';
+const STORAGE_KEY = 'faisca.mock-session';
 
 /** Simulated network latency so loading states are visible while designing screens. */
 const LATENCY_MS = 700;

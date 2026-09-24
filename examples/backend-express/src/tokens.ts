@@ -3,8 +3,8 @@ import { createRemoteJWKSet, jwtVerify, SignJWT } from 'jose';
 import { config } from './config.ts';
 
 const secret = new TextEncoder().encode(config.jwtSecret);
-const ISSUER = 'orbita-api';
-const AUDIENCE = 'orbita-web';
+const ISSUER = 'faisca-api';
+const AUDIENCE = 'faisca-web';
 
 /** Short-lived access token (JWT, HS256). Sent by the front-end as a Bearer token. */
 export function signAccessToken(user: { id: string; email: string }) {

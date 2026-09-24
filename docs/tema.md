@@ -10,7 +10,7 @@ O visual é um tema do [MUI](https://mui.com/material-ui/) inspirado no **Materi
 | [`src/theme/theme.ts`](../src/theme/theme.ts)                                                                                   | Esquemas claro/escuro, tipografia e overrides de todos os componentes                  |
 | [`src/theme/motion.ts`](../src/theme/motion.ts)                                                                                 | Tokens de easing e duração do M3, helper `transition()` e opacidades de _state layer_  |
 | [`src/theme/augment.d.ts`](../src/theme/augment.d.ts)                                                                           | Tipos das extensões: cor `lime`, `container`/`onContainer`, variantes `tonal` e `soft` |
-| [`src/components/brand/OrbitaMark.tsx`](../src/components/brand/OrbitaMark.tsx) + [`public/favicon.svg`](../public/favicon.svg) | Ícone da marca                                                                         |
+| [`src/components/brand/FaiscaMark.tsx`](../src/components/brand/FaiscaMark.tsx) + [`public/favicon.svg`](../public/favicon.svg) | Ícone da marca                                                                         |
 
 A página **/components** do app mostra todos os componentes estilizados: use como referência viva ao montar telas novas.
 
@@ -36,7 +36,7 @@ sx={{ bgcolor: 'primary.container', color: 'primary.onContainer' }}
 - **Foco visível**: anel de 2px na cor primária em todos os elementos interativos (acessibilidade por teclado).
 - **Switch M3**: o polegar cresce ao ligar e ao pressionar.
 - **Transição de página**: _fade through_ com `emphasizedDecelerate` a cada navegação.
-- **Splash**: o satélite do logo orbita enquanto a sessão é restaurada.
+- **Splash**: as faíscas do logo cintilam enquanto a sessão é restaurada.
 - **`prefers-reduced-motion`**: todas as animações são desligadas para quem pediu isso ao sistema.
 
 Use os tokens nas suas telas:
@@ -50,7 +50,7 @@ sx={{ transition: transition(['transform', 'opacity'], 'medium2', 'emphasizedDec
 
 1. Nome: `VITE_APP_NAME` no `.env`.
 2. Cores: edite `lime` e `violet` em `tokens.ts` (mantenha a escala 50–900 para que containers e estados continuem harmônicos).
-3. Ícone: substitua `OrbitaMark.tsx` e `public/favicon.svg`.
+3. Ícone: substitua `FaiscaMark.tsx` e `public/favicon.svg`.
 4. Fonte: troque o import em `src/main.tsx` e `fontFamily` em `theme.ts`.
 
 ## Botão do Google

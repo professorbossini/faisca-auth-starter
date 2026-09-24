@@ -22,11 +22,11 @@ export function AuroraBackground() {
         zIndex: -1,
         overflow: 'hidden',
         backgroundColor: theme.vars.palette.background.default,
-        '@keyframes orbita-drift-a': {
+        '@keyframes faisca-drift-a': {
           '0%, 100%': { transform: 'translate(0, 0) scale(1)' },
           '50%': { transform: 'translate(8vw, 6vh) scale(1.15)' },
         },
-        '@keyframes orbita-drift-b': {
+        '@keyframes faisca-drift-b': {
           '0%, 100%': { transform: 'translate(0, 0) scale(1.1)' },
           '50%': { transform: 'translate(-10vw, -4vh) scale(0.95)' },
         },
@@ -40,7 +40,7 @@ export function AuroraBackground() {
           top: '-18vmax',
           left: '-12vmax',
           background: theme.alpha(theme.vars.palette.lime.main, 0.28),
-          animation: 'orbita-drift-a 22s ease-in-out infinite',
+          animation: 'faisca-drift-a 22s ease-in-out infinite',
           ...theme.applyStyles('dark', {
             background: theme.alpha(theme.vars.palette.lime.main, 0.07),
           }),
@@ -54,7 +54,7 @@ export function AuroraBackground() {
           bottom: '-24vmax',
           right: '-16vmax',
           background: theme.alpha('#7649CF', 0.22),
-          animation: 'orbita-drift-b 26s ease-in-out infinite',
+          animation: 'faisca-drift-b 26s ease-in-out infinite',
           ...theme.applyStyles('dark', { background: theme.alpha('#7649CF', 0.36) }),
         })}
       />
