@@ -1,5 +1,5 @@
 import { Box, Fade } from '@mui/material';
-import { OrbitaMark } from './brand/OrbitaMark';
+import { FaiscaMark } from './brand/FaiscaMark';
 
 /** Shown while the auth adapter restores the session. */
 export function SplashScreen() {
@@ -10,7 +10,7 @@ export function SplashScreen() {
         aria-label="Carregando"
         sx={{ minHeight: '100dvh', display: 'grid', placeItems: 'center' }}
       >
-        <OrbitaMark size={64} animated />
+        <FaiscaMark size={64} animated />
       </Box>
     </Fade>
   );

@@ -1,6 +1,6 @@
 import { Stack, Typography } from '@mui/material';
 import { env } from '@/config/env';
-import { OrbitaMark } from './OrbitaMark';
+import { FaiscaMark } from './FaiscaMark';
 
 interface BrandLogoProps {
   size?: 'small' | 'medium' | 'large';
@@ -16,7 +16,7 @@ export function BrandLogo({ size = 'medium' }: BrandLogoProps) {
   const s = sizes[size];
   return (
     <Stack direction="row" spacing={1.5} sx={{ alignItems: 'center' }}>
-      <OrbitaMark size={s.mark} />
+      <FaiscaMark size={s.mark} />
       <Typography
         component="span"
         sx={{

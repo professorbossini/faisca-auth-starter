@@ -1,6 +1,6 @@
 import { Alert, AlertTitle, Box, Card, CardContent, Link, Stack, Typography } from '@mui/material';
 import type { ConfigError } from '@/config/env';
-import { OrbitaMark } from './brand/OrbitaMark';
+import { FaiscaMark } from './brand/FaiscaMark';
 
 /** Friendly screen for misconfigured forks: tells exactly which variables are missing. */
 export function ConfigErrorScreen({ error }: { error: ConfigError }) {
@@ -9,7 +9,7 @@ export function ConfigErrorScreen({ error }: { error: ConfigError }) {
       <Card sx={{ maxWidth: 560, width: '100%' }}>
         <CardContent sx={{ p: { xs: 3, sm: 4 } }}>
           <Stack spacing={2.5}>
-            <OrbitaMark size={44} />
+            <FaiscaMark size={44} />
             <Typography variant="h4">Falta configurar o ambiente</Typography>
             <Alert severity="warning">
               <AlertTitle>{error.message}</AlertTitle>
@@ -29,7 +29,7 @@ export function ConfigErrorScreen({ error }: { error: ConfigError }) {
               <code>VITE_AUTH_PROVIDER=mock</code>.
             </Typography>
             <Link
-              href="https://github.com/professorbossini/orbita-auth-starter#configuração"
+              href="https://github.com/professorbossini/faisca-auth-starter#configuração"
               target="_blank"
               rel="noreferrer"
             >
