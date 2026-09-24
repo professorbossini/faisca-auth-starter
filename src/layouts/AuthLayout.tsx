@@ -3,7 +3,8 @@ import { Outlet } from 'react-router';
 import { AuroraBackground } from '@/components/AuroraBackground';
 import { ColorModeToggle } from '@/components/ColorModeToggle';
 import { PageTransition } from '@/components/PageTransition';
-import { env } from '@/config/env';
+import { PoweredByFaisca } from '@/components/brand/PoweredByFaisca';
+import { brand } from '@/config/brand';
 
 export function AuthLayout() {
   return (
@@ -34,8 +35,10 @@ export function AuthLayout() {
         </PageTransition>
       </Box>
       <Typography variant="caption" color="text.secondary" sx={{ textAlign: 'center', pb: 2 }}>
-        © {new Date().getFullYear()} {env.appName}
+        © {new Date().getFullYear()}
+        {brand.name ? ` ${brand.name}` : ''}
       </Typography>
+      <PoweredByFaisca />
     </Box>
   );
 }

@@ -1,6 +1,7 @@
 import { Button, Stack, Typography } from '@mui/material';
 import { Link as RouterLink } from 'react-router';
-import { FaiscaMark } from '@/components/brand/FaiscaMark';
+import { BrandPulse } from '@/components/brand/BrandMark';
+import { PoweredByFaisca } from '@/components/brand/PoweredByFaisca';
 
 export function NotFoundPage() {
   return (
@@ -14,7 +15,7 @@ export function NotFoundPage() {
         p: 3,
       }}
     >
-      <FaiscaMark size={72} animated />
+      <BrandPulse size={72} />
       <Typography variant="h2" component="h1">
         404
       </Typography>
@@ -24,6 +25,7 @@ export function NotFoundPage() {
       <Button component={RouterLink} to="/" variant="contained" size="large">
         Voltar para o início
       </Button>
+      <PoweredByFaisca />
     </Stack>
   );
 }

@@ -17,9 +17,11 @@ import NotificationsNoneRounded from '@mui/icons-material/NotificationsNoneRound
 import SearchRounded from '@mui/icons-material/SearchRounded';
 import { NavLink, Outlet, useLocation } from 'react-router';
 import { BrandLogo } from '@/components/brand/BrandLogo';
+import { PoweredByFaisca } from '@/components/brand/PoweredByFaisca';
 import { ColorModeToggle } from '@/components/ColorModeToggle';
 import { useNotify } from '@/components/feedback/notificationsContext';
 import { PageTransition } from '@/components/PageTransition';
+import { brand } from '@/config/brand';
 import { AccountMenu } from './AccountMenu';
 import { activeNavItem, NAV_ITEMS } from './navigation';
 
@@ -32,9 +34,18 @@ export function AppLayout() {
     <Box sx={{ minHeight: '100dvh', pb: { xs: 11, md: 0 } }}>
       <AppBar position="sticky">
         <Toolbar sx={{ gap: 3, minHeight: { xs: 60, sm: 64 } }}>
-          <NavLink to="/" style={{ textDecoration: 'none', color: 'inherit' }} aria-label="Início">
+          {brand.needsSetup ? (
+            // Placeholder is itself a button (opens the brand guide), so no link around it.
             <BrandLogo size="small" />
-          </NavLink>
+          ) : (
+            <NavLink
+              to="/"
+              style={{ textDecoration: 'none', color: 'inherit' }}
+              aria-label="Início"
+            >
+              <BrandLogo size="small" />
+            </NavLink>
+          )}
           <Tabs
             value={current}
             component="nav"
@@ -80,7 +91,7 @@ export function AppLayout() {
         </Toolbar>
       </AppBar>
 
-      <Container component="main" maxWidth="lg" sx={{ py: { xs: 3, md: 4 } }}>
+      <Container component="main" maxWidth="lg" sx={{ pt: { xs: 3, md: 4 }, pb: 10 }}>
         <PageTransition>
           <Outlet />
         </PageTransition>
@@ -111,6 +122,8 @@ export function AppLayout() {
           ))}
         </BottomNavigation>
       </Paper>
+
+      <PoweredByFaisca sx={{ bottom: { xs: 88, md: 16 } }} />
     </Box>
   );
 }
