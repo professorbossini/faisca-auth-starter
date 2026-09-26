@@ -3,7 +3,7 @@
   "private": true,
   "version": "1.0.0",
   "description": "React + MUI starter with Google sign-in ready to plug into any backend.",
-  "license": "MIT",
+  "license": "SEE LICENSE IN LICENSE",
   "type": "module",
   "engines": {
     "node": ">=20.19"

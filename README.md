@@ -12,7 +12,7 @@
 
 [![CI](https://github.com/professorbossini/faisca-auth-starter/actions/workflows/ci.yml/badge.svg)](https://github.com/professorbossini/faisca-auth-starter/actions/workflows/ci.yml)
 [![Template](https://img.shields.io/badge/GitHub-template-5B2DB0?logo=github)](https://github.com/professorbossini/faisca-auth-starter/generate)
-[![License: MIT](https://img.shields.io/badge/licen%C3%A7a-MIT-C6EF34)](LICENSE)
+[![Licença: MIT + atribuição](https://img.shields.io/badge/licen%C3%A7a-MIT%20%2B%20atribui%C3%A7%C3%A3o-C6EF34)](LICENSE)
 ![React 19](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=white)
 ![MUI](https://img.shields.io/badge/MUI-Material%203-007FFF?logo=mui&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/TypeScript-strict-3178C6?logo=typescript&logoColor=white)
@@ -225,7 +225,7 @@ Um app recém-criado mostra **placeholders transparentes** no lugar do logo e do
 
 <p align="center"><img src="docs/images/brand-setup.png" alt="Guia Personalize sua marca, aberto ao clicar no placeholder" width="560" /></p>
 
-No canto inferior da tela fica o selo **"feito com Faísca"**, com as marcas do Faísca e do Bossini lado a lado: um lembrete de onde o app nasceu (e um link para este repositório).
+No canto inferior da tela fica o selo **"feito com Faísca"**, com as marcas do Faísca e do Bossini lado a lado: um lembrete de onde o app nasceu (e um link para este repositório). Ele pode ser escondido com `VITE_SHOW_POWERED_BY=false`, mas então a [licença](LICENSE) pede o mesmo crédito em outro lugar visível do app, como o rodapé ou uma página "Sobre".
 
 ## Tema e design
 
@@ -275,4 +275,9 @@ Issues e PRs são bem-vindos! Veja [CONTRIBUTING.md](CONTRIBUTING.md). Os commit
 
 ## Licença
 
-[MIT](LICENSE) © Rodrigo Bossini. Use, modifique e distribua à vontade.
+Licença Faísca (MIT com atribuição) © Rodrigo Bossini. O projeto é **livre**: use, copie, modifique, distribua e venda à vontade, inclusive em projetos comerciais. Há só duas condições:
+
+1. **Mantenha a referência ao Faísca** visível para quem usa o app. O selo "feito com Faísca" já cumpre isso; se escondê-lo, mostre o crédito (nome Faísca, as duas marcas e o link para este repositório) em outro lugar visível, como o rodapé ou uma página "Sobre".
+2. **Não altere as marcas** do Faísca e do Bossini: formas, cores e proporções ficam como estão (redimensionar pode). Trocar o favicon padrão e o placeholder de logo pela marca do seu app continua liberado.
+
+O texto completo está em [LICENSE](LICENSE).

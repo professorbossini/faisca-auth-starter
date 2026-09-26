@@ -55,7 +55,7 @@ sx={{ transition: transition(['transform', 'opacity'], 'medium2', 'emphasizedDec
 2. **Nome:** `VITE_APP_NAME` no `.env` (também vira o título da aba).
 3. **Cores:** edite `lime` e `violet` em `tokens.ts` (mantenha a escala 50–900 para que containers e estados continuem harmônicos).
 4. **Fonte:** troque o import em `src/main.tsx` e `fontFamily` em `theme.ts`.
-5. **Selo "feito com Faísca":** fica no canto inferior e linka para o template. Para esconder, `VITE_SHOW_POWERED_BY=false`.
+5. **Selo "feito com Faísca":** fica no canto inferior, com as marcas do Faísca e do Bossini, e linka para o template. Para esconder, `VITE_SHOW_POWERED_BY=false`; nesse caso, a [licença](../LICENSE) pede o mesmo crédito em outro lugar visível. As marcas não podem ser alteradas.
 
 ## Botão do Google
 
