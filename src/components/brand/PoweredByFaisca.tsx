@@ -2,24 +2,30 @@ import { useState } from 'react';
 import { Box, Link, Tooltip, Typography, type SxProps, type Theme } from '@mui/material';
 import { brand, FAISCA_REPO_URL } from '@/config/brand';
 import { duration, easing } from '@/theme/motion';
+import { BossiniMark } from './BossiniMark';
 import { FaiscaMark } from './FaiscaMark';
 
 /**
  * "feito com Faísca" badge pinned to a bottom corner: a reminder that this app
- * was born from the Faísca template. Hide it with VITE_SHOW_POWERED_BY=false.
+ * was born from the Faísca template, with the Faísca and Bossini marks side by side.
+ * VITE_SHOW_POWERED_BY=false hides it, but the LICENSE then requires an equivalent
+ * visible credit elsewhere (e.g. a footer or an "About" page).
  */
 export function PoweredByFaisca({ sx }: { sx?: SxProps<Theme> }) {
   const [hover, setHover] = useState(false);
   if (!brand.showPoweredBy) return null;
 
   return (
-    <Tooltip title="Este app nasceu do template Faísca. Ver no GitHub" placement="top-end">
+    <Tooltip
+      title="Este app nasceu do template Faísca, de Rodrigo Bossini. Ver no GitHub"
+      placement="top-end"
+    >
       <Link
         href={FAISCA_REPO_URL}
         target="_blank"
         rel="noopener noreferrer"
         underline="none"
-        aria-label="Feito com Faísca (abre o repositório no GitHub)"
+        aria-label="Feito com Faísca, de Rodrigo Bossini (abre o repositório no GitHub)"
         onMouseEnter={() => setHover(true)}
         onMouseLeave={() => setHover(false)}
         onFocus={() => setHover(true)}
@@ -104,6 +110,7 @@ export function PoweredByFaisca({ sx }: { sx?: SxProps<Theme> }) {
             Faísca
           </Box>
         </Typography>
+        <BossiniMark size={22} />
       </Link>
     </Tooltip>
   );
