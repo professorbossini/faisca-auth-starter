@@ -31,4 +31,10 @@ describe('brand placeholders', () => {
     expect(link).toHaveAttribute('href', FAISCA_REPO_URL);
     expect(link).toHaveAttribute('target', '_blank');
   });
+
+  it('shows the Bossini mark next to the Faísca name in the badge', () => {
+    renderThemed(<PoweredByFaisca />);
+    const link = screen.getByRole('link', { name: /feito com faísca/i });
+    expect(link.querySelector('[data-marca="bossini"]')).not.toBeNull();
+  });
 });

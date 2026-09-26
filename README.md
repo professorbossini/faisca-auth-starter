@@ -2,7 +2,11 @@
 
 <img src="docs/images/hero.png" alt="Faísca Auth Starter: login com Google pronto para qualquer backend" width="100%" />
 
+<img src="public/favicon.svg" alt="Marca Faísca" height="48" />&nbsp;&nbsp;<img src="public/bossini-mark.svg" alt="Marca Bossini" height="48" />
+
 # Faísca Auth Starter
+
+<sub>por Rodrigo Bossini</sub>
 
 **O ponto de partida para o seu próximo app React: login com Google, tema Material 3 e uma camada de autenticação que se encaixa em qualquer backend.**
 
@@ -221,7 +225,7 @@ Um app recém-criado mostra **placeholders transparentes** no lugar do logo e do
 
 <p align="center"><img src="docs/images/brand-setup.png" alt="Guia Personalize sua marca, aberto ao clicar no placeholder" width="560" /></p>
 
-No canto inferior da tela fica o selo **"feito com Faísca"**, um lembrete de onde o app nasceu (e um link para este repositório). Se preferir, desligue com `VITE_SHOW_POWERED_BY=false`.
+No canto inferior da tela fica o selo **"feito com Faísca"**, com as marcas do Faísca e do Bossini lado a lado: um lembrete de onde o app nasceu (e um link para este repositório).
 
 ## Tema e design
 

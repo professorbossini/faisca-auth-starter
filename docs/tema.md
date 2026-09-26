@@ -4,15 +4,16 @@ O visual é um tema do [MUI](https://mui.com/material-ui/) inspirado no **Materi
 
 ## Onde fica cada coisa
 
-| Arquivo                                                                                                                         | Conteúdo                                                                               |
-| ------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
-| [`src/theme/tokens.ts`](../src/theme/tokens.ts)                                                                                 | Cores brutas (escalas `lime`, `violet`, `ink`). **Troque a marca aqui.**               |
-| [`src/theme/theme.ts`](../src/theme/theme.ts)                                                                                   | Esquemas claro/escuro, tipografia e overrides de todos os componentes                  |
-| [`src/theme/motion.ts`](../src/theme/motion.ts)                                                                                 | Tokens de easing e duração do M3, helper `transition()` e opacidades de _state layer_  |
-| [`src/theme/augment.d.ts`](../src/theme/augment.d.ts)                                                                           | Tipos das extensões: cor `lime`, `container`/`onContainer`, variantes `tonal` e `soft` |
-| [`src/brand/`](../src/brand/README.md)                                                                                          | **Seu logo** (`logo.svg`, `.png`...), detectado automaticamente                        |
-| [`src/config/brand.ts`](../src/config/brand.ts)                                                                                 | Resolve logo e nome: `VITE_APP_LOGO_URL` → `src/brand/logo.*` → placeholder            |
-| [`src/components/brand/FaiscaMark.tsx`](../src/components/brand/FaiscaMark.tsx) + [`public/favicon.svg`](../public/favicon.svg) | Marca do template Faísca (selo "feito com Faísca" e favicon padrão)                    |
+| Arquivo                                                                                                                                     | Conteúdo                                                                               |
+| ------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| [`src/theme/tokens.ts`](../src/theme/tokens.ts)                                                                                             | Cores brutas (escalas `lime`, `violet`, `ink`). **Troque a marca aqui.**               |
+| [`src/theme/theme.ts`](../src/theme/theme.ts)                                                                                               | Esquemas claro/escuro, tipografia e overrides de todos os componentes                  |
+| [`src/theme/motion.ts`](../src/theme/motion.ts)                                                                                             | Tokens de easing e duração do M3, helper `transition()` e opacidades de _state layer_  |
+| [`src/theme/augment.d.ts`](../src/theme/augment.d.ts)                                                                                       | Tipos das extensões: cor `lime`, `container`/`onContainer`, variantes `tonal` e `soft` |
+| [`src/brand/`](../src/brand/README.md)                                                                                                      | **Seu logo** (`logo.svg`, `.png`...), detectado automaticamente                        |
+| [`src/config/brand.ts`](../src/config/brand.ts)                                                                                             | Resolve logo e nome: `VITE_APP_LOGO_URL` → `src/brand/logo.*` → placeholder            |
+| [`src/components/brand/FaiscaMark.tsx`](../src/components/brand/FaiscaMark.tsx) + [`public/favicon.svg`](../public/favicon.svg)             | Marca do template Faísca (selo "feito com Faísca" e favicon padrão)                    |
+| [`src/components/brand/BossiniMark.tsx`](../src/components/brand/BossiniMark.tsx) + [`public/bossini-mark.svg`](../public/bossini-mark.svg) | Marca Bossini, que acompanha o nome Faísca no selo e no README                         |
 
 A página **/components** do app mostra todos os componentes estilizados: use como referência viva ao montar telas novas.
 
