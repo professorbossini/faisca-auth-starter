@@ -17,7 +17,7 @@
     "cors": "^2.8.6",
     "express": "^5.2.1",
     "google-auth-library": "^11.1.0",
-    "jose": "^6.2.12"
+    "jose": "^6.2.13"
   },
   "devDependencies": {
     "@types/cookie-parser": "^1.4.10",
